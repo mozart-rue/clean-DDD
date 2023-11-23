@@ -1,15 +1,12 @@
 import { Slug } from "./value-objects/slug";
 import { Entity } from "../../core/entites/entity";
+import { UniqueEntityId } from "../../core/entites/unique-entity-id";
 
 interface QuestionProps {
-  authorId: string;
+  authorId: UniqueEntityId;
   title: string;
   slug: Slug;
   content: string;
 }
 
-export class Question extends Entity<QuestionProps> {
-  constructor(props: QuestionProps, id?: string) {
-    super(props, id);
-  }
-}
+export class Question extends Entity<QuestionProps> {}
