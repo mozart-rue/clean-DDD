@@ -19,10 +19,6 @@ export class Answer extends Entity<AnswerProps> {
     return this.questionId;
   }
 
-  get content() {
-    return this.props.content;
-  }
-
   get createdAt() {
     return this.props.createdAt;
   }
@@ -37,6 +33,10 @@ export class Answer extends Entity<AnswerProps> {
 
   private touch() {
     this.props.updatedAt = new Date();
+  }
+
+  get content() {
+    return this.props.content;
   }
 
   set content(content: string) {

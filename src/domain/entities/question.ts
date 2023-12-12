@@ -19,20 +19,8 @@ export class Question extends Entity<QuestionProps> {
     return this.authorId;
   }
 
-  get bestAnswerId(): UniqueEntityId {
-    return this.bestAnswerId;
-  }
-
-  get title(): string {
-    return this.title;
-  }
-
   get slug(): Slug {
     return this.slug;
-  }
-
-  get content(): string {
-    return this.content;
   }
 
   get createdAt(): Date {
@@ -55,15 +43,27 @@ export class Question extends Entity<QuestionProps> {
     this.props.updatedAt = new Date();
   }
 
+  get title(): string {
+    return this.title;
+  }
+
   set title(title: string) {
     this.props.title = title;
     this.props.slug = Slug.createFromText(title);
     this.touch();
   }
 
+  get content(): string {
+    return this.content;
+  }
+
   set content(content: string) {
     this.props.content = content;
     this.touch();
+  }
+
+  get bestAnswerId(): UniqueEntityId {
+    return this.bestAnswerId;
   }
 
   set bestAnswerId(bestAnswerId: UniqueEntityId) {

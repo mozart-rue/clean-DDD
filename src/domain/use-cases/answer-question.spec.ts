@@ -4,7 +4,7 @@ import { Answer } from "../entities/answer";
 
 const fakeAnswerRepository: AnswerRepository = {
   create: async (answer: Answer) => {
-    return;
+    console.log(`S{answer}`);
   },
 };
 
