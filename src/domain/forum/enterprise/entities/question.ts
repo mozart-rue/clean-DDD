@@ -20,11 +20,11 @@ export class Question extends Entity<QuestionProps> {
   }
 
   get slug(): Slug {
-    return this.slug;
+    return this.props.slug;
   }
 
   get createdAt(): Date {
-    return this.createdAt;
+    return this.props.createdAt;
   }
 
   get updatedAt(): Date {
@@ -44,7 +44,7 @@ export class Question extends Entity<QuestionProps> {
   }
 
   get title(): string {
-    return this.title;
+    return this.props.title;
   }
 
   set title(title: string) {
